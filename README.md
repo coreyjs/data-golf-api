@@ -2,7 +2,7 @@
 [![PyPI version](https://badge.fury.io/py/data_golf.svg)](https://badge.fury.io/py/data_golf)
 
 
-# Data_Golf
+# Data Golf API (Unofficial)
 
 ### An Unofficial API Library for DataGolf.com APIs
 
