@@ -42,5 +42,35 @@ def test_tour_schedule(d_m, dg_client):
     d_m.assert_called_once()
     assert (
         d_m.call_args[1]["url"]
-        == "https://feeds.datagolf.com/get-schedule?key=test_key&file_format=json"
+        == "https://feeds.datagolf.com/get-schedule?tour=all&key=test_key&file_format=json"
+    )
+
+
+@mock.patch("httpx.Client.get")
+def test_tour_schedule_for_tour(d_m, dg_client):
+    dg_client.general.tour_schedule(tour="kft")
+    d_m.assert_called_once()
+    assert (
+        d_m.call_args[1]["url"]
+        == "https://feeds.datagolf.com/get-schedule?tour=kft&key=test_key&file_format=json"
+    )
+
+
+@mock.patch("httpx.Client.get")
+def test_field_updates(d_m, dg_client):
+    dg_client.general.field_updates()
+    d_m.assert_called_once()
+    assert (
+        d_m.call_args[1]["url"]
+        == "https://feeds.datagolf.com/field-updates?key=test_key&file_format=json"
+    )
+
+
+@mock.patch("httpx.Client.get")
+def test_field_updates_with_tour_euro(d_m, dg_client):
+    dg_client.general.field_updates(tour="euro")
+    d_m.assert_called_once()
+    assert (
+        d_m.call_args[1]["url"]
+        == "https://feeds.datagolf.com/field-updates?tour=euro&key=test_key&file_format=json"
     )

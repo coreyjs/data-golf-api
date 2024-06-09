@@ -40,6 +40,9 @@ client = DataGolfClient(api_key="YOUR_API_KEY", verbose=True)
 # Player List
 players = client.general.player_list()
 
-# Tour  Schedule
+# Current Season Tour  Schedule
+# Can use optinal parameter 'tour' to filter by tour: pga, euro, kft, alt, liv
 tour_schedule = client.general.tour_schedule()
+tour_schedule = client.general.tour_schedule(tour="pga")
+tour_schedule = client.general.tour_schedule(tour="liv")
 ```
