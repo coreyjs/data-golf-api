@@ -1,3 +1,4 @@
+from data_golf.api.model import Model
 from data_golf.config import DGConfig
 from data_golf.http import HttpClient
 from data_golf.api.general import General
@@ -24,6 +25,7 @@ class DataGolfClient:
 
         # Endpoints
         self.general = General(self._http_client)
+        self.model = Model(self._http_client)
 
     def _validate_api_key(self, api_key: str) -> None:
         """
