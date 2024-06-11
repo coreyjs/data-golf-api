@@ -16,7 +16,7 @@ class General:
         """
         Current season schedule for PGA Tour, European Tour, Korn Ferry Tour, and LIV.
         :param tour: str optional defaults to 'all', the tour you want the schedule for.  values: all, pga, euro, kft, alt, liv
-        :param format:
+        :param f_format:
         :return:
         """
         return self.client.get(resource=f"/get-schedule?tour={tour}", format=f_format)
