@@ -119,7 +119,13 @@ class Model:
             format=f_format,
         )
 
-    def fantasy_projection(self, tour: str = "pga", slate: str = "main", site: str = "draftkings", f_format: str = "json") -> dict:
+    def fantasy_projection(
+        self,
+        tour: str = "pga",
+        slate: str = "main",
+        site: str = "draftkings",
+        f_format: str = "json",
+    ) -> dict:
         """
         Returns our fantasy projections for a specific tour and slate.
         :param tour: pga (default), euro, opp (opposite field PGA TOUR event), alt
@@ -134,4 +140,3 @@ class Model:
             params=query_p,
             format=f_format,
         )
-

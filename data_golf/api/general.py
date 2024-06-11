@@ -19,14 +19,18 @@ class General:
         :param f_format:
         :return:
         """
-        return self.client.get(resource=f"/get-schedule?tour={tour}", format=f_format)
+        return self.client.get(
+            resource="/get-schedule", params={"tour": tour}, format=f_format
+        )
 
-    def field_updates(self, tour: str = None, f_format: str = "json") -> List[dict]:
+    def field_updates(self, tour: str = "pga", f_format: str = "json") -> List[dict]:
         """
         Up-to-the-minute field updates on WDs, Monday Qualifiers, tee times, and fantasy salaries for PGA Tour,
         European Tour, and Korn Ferry Tour events. Includes data golf IDs and tour-specific IDs for
         each player in the field.
         :return:
         """
-        q = f"?tour={tour}" if tour else ""
-        return self.client.get(resource=f"/field-updates{q}", format=f_format)
+
+        return self.client.get(
+            resource="/field-updates", params={"tour": tour}, format=f_format
+        )
