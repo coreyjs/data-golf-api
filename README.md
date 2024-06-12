@@ -51,6 +51,7 @@ These modules map directly to the [DataGolf API Documentation](https://datagolf.
 
 The Data Golf API is a paid service via [DataGolf.com](https://datagolf.com/api-access), there they will provide you with an API Key.  This library is
 only a helper utility, to make interacting and consuming the API easier.
+
 ---
 
 # General APIs
