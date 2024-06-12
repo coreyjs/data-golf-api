@@ -275,8 +275,8 @@ rsp = client.predictions.fantasy_projection(tour='pga', site='fanduel', slate='s
 </details>
 
 ```python
-data = dg.live_prediction.live_in_play()
-data = dg.live_prediction.live_in_play(tour='kft', odds_format='american')
+data = dg.live_predictions.live_in_play()
+data = dg.live_predictions.live_in_play(tour='kft', odds_format='american')
 ```
 
 
@@ -302,8 +302,8 @@ Returns live strokes-gained and traditional stats for every player during PGA To
 </details>
 
 ```python
-data = dg.live_prediction.live_tournament_stats()
-data = dg.live_prediction.live_tournament_stats(stats="sq_arg, sg_bs", disppaly="rank")
+data = dg.live_predictions.live_tournament_stats()
+data = dg.live_predictions.live_tournament_stats(stats="sq_arg, sg_bs", disppaly="rank")
 ```
 
 
@@ -329,8 +329,8 @@ Returns live hole scoring averages and distrubutions (birdies, pars, bogeys, etc
 </details>
 
 ```python
-data = dg.live_prediction.live_hole_stats()
-data = dg.live_prediction.live_hole_stats(tour='kft')
+data = dg.live_predictions.live_hole_stats()
+data = dg.live_predictions.live_hole_stats(tour='kft')
 ```
 
 

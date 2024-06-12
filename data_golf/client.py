@@ -26,8 +26,8 @@ class DataGolfClient:
 
         # Endpoints
         self.general = General(self._http_client)
-        self.prediction = Prediction(self._http_client)
-        self.live_prediction = LivePrediction(self._http_client)
+        self.predictions = Prediction(self._http_client)
+        self.live_predictions = LivePrediction(self._http_client)
 
     def _validate_api_key(self, api_key: str) -> None:
         """

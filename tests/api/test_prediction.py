@@ -3,7 +3,7 @@ from unittest import mock
 
 @mock.patch("httpx.Client.get")
 def test_rankings(d_m, dg_client):
-    dg_client.prediction.rankings()
+    dg_client.predictions.rankings()
     d_m.assert_called_once()
     assert (
         "https://feeds.datagolf.com/preds/get-dg-rankings?" in d_m.call_args[1]["url"]
@@ -14,7 +14,7 @@ def test_rankings(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_pre_tournament_pred(d_m, dg_client):
-    dg_client.prediction.pre_tournament()
+    dg_client.predictions.pre_tournament()
     d_m.assert_called_once()
     assert "https://feeds.datagolf.com/preds/pre-tournament?" in d_m.call_args[1]["url"]
 
@@ -26,7 +26,7 @@ def test_pre_tournament_pred(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_pre_tournament_with_params(d_m, dg_client):
-    dg_client.prediction.pre_tournament(
+    dg_client.predictions.pre_tournament(
         tour="euro", add_position="1,2,3", dead_heat=False, odds_format="american"
     )
     d_m.assert_called_once()
@@ -41,7 +41,7 @@ def test_pre_tournament_with_params(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_pre_tournament_pred_archive(d_m, dg_client):
-    dg_client.prediction.pre_tournament_pred_archive(event_id="100")
+    dg_client.predictions.pre_tournament_pred_archive(event_id="100")
     d_m.assert_called_once()
     assert (
         "https://feeds.datagolf.com/preds/pre-tournament-archive?"
@@ -55,7 +55,7 @@ def test_pre_tournament_pred_archive(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_player_skill_decomp(d_m, dg_client):
-    dg_client.prediction.player_skill_decompositions(tour="alt")
+    dg_client.predictions.player_skill_decompositions(tour="alt")
     d_m.assert_called_once()
     assert (
         "https://feeds.datagolf.com/preds/player-decompositions?"
@@ -68,7 +68,7 @@ def test_player_skill_decomp(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_player_skill_ratings(d_m, dg_client):
-    dg_client.prediction.player_skill_ratings()
+    dg_client.predictions.player_skill_ratings()
     d_m.assert_called_once()
     assert "https://feeds.datagolf.com/preds/skill-ratings?" in d_m.call_args[1]["url"]
 
@@ -78,7 +78,7 @@ def test_player_skill_ratings(d_m, dg_client):
 
 @mock.patch("httpx.Client.get")
 def test_detailed_approach_skill(d_m, dg_client):
-    dg_client.prediction.detailed_approach_skill()
+    dg_client.predictions.detailed_approach_skill()
     d_m.assert_called_once()
     assert "https://feeds.datagolf.com/preds/approach-skill?" in d_m.call_args[1]["url"]
 
