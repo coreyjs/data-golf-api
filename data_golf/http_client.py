@@ -6,6 +6,14 @@ import httpx
 import logging
 
 
+class DGForbidden(Exception):
+    pass
+
+
+class DGBadRequest(Exception):
+    pass
+
+
 class HttpClient:
     def __init__(self, config) -> None:
         self._config = config
@@ -50,6 +58,12 @@ class HttpClient:
                 params=q,
                 **kwargs,
             )
+
+        if r.status_code == 403:
+            raise DGForbidden("403 Forbidden: Check your API key.")
+
+        if r.status_code == 400:
+            raise DGBadRequest(r.content)
 
         if self._config.verbose:
             logging.info(f"API URL: {r.url}")

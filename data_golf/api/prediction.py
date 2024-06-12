@@ -1,4 +1,4 @@
-class Model:
+class Prediction:
     def __init__(self, client):
         self.client = client
         self._path = "/preds"
@@ -12,7 +12,7 @@ class Model:
             resource=f"{self._path}/get-dg-rankings", format=f_format
         )
 
-    def pre_tournament_pred(
+    def pre_tournament(
         self,
         tour: str = "pga",
         add_position: str = None,
@@ -44,14 +44,14 @@ class Model:
         self,
         event_id: str = None,
         year: str = None,
-        odd_format: str = "percent",
+        odds_format: str = "percent",
         f_format="json",
     ) -> dict:
         """
         Returns pre-tournament predictions for a specific event or year.
         :param event_id: The event id for the tournament.
         :param year: The year for the tournament.
-        :param odd_format: percent (default), american, decimal, fraction
+        :param odds_format: percent (default), american, decimal, fraction
         :param f_format: json (default)
         :return: dict
         """
@@ -62,7 +62,7 @@ class Model:
             query_p["event_id"] = event_id
         if year:
             query_p["year"] = year
-        query_p["odds_format"] = odd_format
+        query_p["odds_format"] = odds_format
         query_p["file_format"] = f_format
 
         return self.client.get(
