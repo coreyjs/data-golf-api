@@ -28,6 +28,7 @@ class General:
         Up-to-the-minute field updates on WDs, Monday Qualifiers, tee times, and fantasy salaries for PGA Tour,
         European Tour, and Korn Ferry Tour events. Includes data golf IDs and tour-specific IDs for
         each player in the field.
+        :type tour: str := pga (default), euro, kft, opp, alt
         :return:
         """
 

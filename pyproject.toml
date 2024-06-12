@@ -1,13 +1,30 @@
 [tool.poetry]
 name = "data_golf"
-version = "0.3.0"
-description = "API Wrapper for Data golf endpoints"
+version = "0.4.0"
+description = "API Wrapper for DataGolf.com endpoints."
 authors = ["Corey Schaf <cschaf@gmail.com>"]
 readme = "README.md"
+packages = [{include = "data_golf"}]
+license = "MIT"
+homepage = "https://github.com/coreyjs/data-golf-api"
+repository = "https://github.com/coreyjs/data-golf-api"
+keywords = ["golf", "datagolf", "data golf", "golf data", "golf AI", "golf machine learning", "golf ML", "golf stats"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-httpx = "*"
+httpx = "^0.27.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest="^7.1.3"
@@ -19,3 +36,29 @@ black = "*"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+line-length = 121

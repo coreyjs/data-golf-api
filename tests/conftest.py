@@ -1,6 +1,6 @@
 import pytest
 
-from data_golf.client import DataGolfClient
+from data_golf import DataGolfClient
 
 
 @pytest.fixture(scope="function")
