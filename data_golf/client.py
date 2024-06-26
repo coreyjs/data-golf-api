@@ -1,4 +1,4 @@
-from betting import Betting
+from data_golf.api.betting import Betting
 from data_golf.api.prediction import Prediction
 from data_golf.config import DGConfig
 from data_golf.http_client import HttpClient
