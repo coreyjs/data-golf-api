@@ -1,3 +1,4 @@
+from data_golf.api.betting import Betting
 from data_golf.api.prediction import Prediction
 from data_golf.config import DGConfig
 from data_golf.http_client import HttpClient
@@ -28,6 +29,7 @@ class DataGolfClient:
         self.general = General(self._http_client)
         self.predictions = Prediction(self._http_client)
         self.live_predictions = LivePrediction(self._http_client)
+        self.betting = Betting(self._http_client)
 
     def _validate_api_key(self, api_key: str) -> None:
         """
