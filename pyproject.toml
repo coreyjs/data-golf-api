@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "data_golf"
-version = "0.4.0"
+version = "0.5.1"
 description = "API Wrapper for DataGolf.com endpoints."
 authors = ["Corey Schaf <cschaf@gmail.com>"]
 readme = "README.md"

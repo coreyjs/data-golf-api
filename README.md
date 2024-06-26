@@ -334,8 +334,89 @@ data = dg.live_predictions.live_hole_stats(tour='kft')
 ```
 
 
+---
+
+# Betting
+
+### Outright Odds
+
+Returns the most recent win, top 5, top 10, top 20, make/miss cut, and
+         first round leader odds offered at 11 sportsbooks alongside the corresponding
+          predictions from the DG model.
+
+<details>
+    <summary>API Endpoint Info</summary>
 
 
+**Endpoint:** `/betting-tools/outrights`  
+**Method:** GET  
+**Formats:** JSON
 
+| Param   | Type | Ex                                                           |
+|---------|------|--------------------------------------------------------------|
+| tour    | (str, optional)  |  pga (default), euro, opp (opposite field PGA TOUR event), kft, alt |
+| market  | (str, required)  | Specifies the match-up market. Supports values: win, top_5, top_10, top_20, mc, make_cut, frl                                     |
+| odds_format | (str, optional)   |  Specifies the odds format. Supports values: percent, american, decimal (default), fraction               |
+
+</details>
+
+```python
+data = dg.betting.outright_odds(market='win')
+data = dg.betting.outright_odds(market='top_5', tour='euro')
+```
+
+
+### Matchup Odds
+
+
+Returns the most recent tournament match-up, round match-up, and 3-ball odds offered at 8
+            sportsbooks alongside the corresponding prediction from our model.
+
+<details>
+    <summary>API Endpoint Info</summary>
+
+
+**Endpoint:** `/betting-tools/matchups`  
+**Method:** GET  
+**Formats:** JSON
+
+| Param   | Type | Ex                                                           |
+|---------|------|--------------------------------------------------------------|
+| tour    | (str, optional)  |  pga (default), euro, opp (opposite field PGA TOUR event), kft, alt |
+| market  | (str, required)  | Specifies the match-up market. Supports values: tournament_matchups, round_matchups, 3_balls                                     |
+| odds_format | (str, optional)   |  Specifies the odds format. Supports values: percent, american, decimal (default), fraction               |
+
+</details>
+
+```python
+data = dg.betting.matchup_odds(market='tournament_matchups')
+data = dg.betting.matchup_odds(market='3_balls', tour='euro')
+```
+
+### Matchup Odds - All Pairings
+
+
+Returns Data Golf matchup / 3-ball odds for every pairing in the next round of
+            current PGA Tour and European Tour events.
+
+<details>
+    <summary>API Endpoint Info</summary>
+
+
+**Endpoint:** `/betting-tools/matchups-all-pairings`  
+**Method:** GET  
+**Formats:** JSON
+
+| Param   | Type | Ex                                                           |
+|---------|------|--------------------------------------------------------------|
+| tour    | (str, optional)  |  pga (default), euro, opp (opposite field PGA TOUR event), kft, alt |
+| odds_format | (str, optional)   |  Specifies the odds format. Supports values: percent, american, decimal (default), fraction               |
+
+</details>
+
+```python
+data = dg.betting.matchup_odds_all_pairings(tour='pga')
+data = dg.betting.matchup_odds_all_pairings(tour='euro', odds_format='american')
+```
 
 

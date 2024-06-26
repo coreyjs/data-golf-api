@@ -9,14 +9,14 @@ class LivePrediction:
         dead_heat: bool = False,
         odds_format: str = "percent",
         f_format: str = "json",
-    ):
+    ) -> dict:
         """
         Returns live (updating at 5 minute intervals) finish probabilities for ongoing PGA and European Tour tournaments.
         :param tour: pga (default), euro, opp (opposite field PGA TOUR event), kft, alt
         :param dead_heat: False (default), True
         :param odds_format: percent (default), american, decimal, fraction
         :param f_format: Defaults to JSON.
-        :return:
+        :return: dict
         """
         query_p = {
             "odds_format": odds_format,
@@ -34,7 +34,7 @@ class LivePrediction:
         round: str = None,
         display: str = "value",
         f_format: str = "json",
-    ):
+    ) -> dict:
         """
         Returns live strokes-gained and traditional stats for every player during
         PGA Tour tournaments
@@ -44,7 +44,7 @@ class LivePrediction:
         :param round: Specifies the round: Accepts: (event_avg, 1, 2, 3, 4)
         :param display: Specifies how stats are displayed. Accepts values: value (default), rank
         :param f_format:
-        :return:
+        :return: dict
         """
         query_p = {
             "display": display,
