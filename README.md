@@ -1,3 +1,5 @@
+
+
 [![Data-Golf-API](https://github.com/coreyjs/data-golf-api/actions/workflows/python-app.yml/badge.svg)](https://github.com/coreyjs/data-golf-api/actions/workflows/python-app.yml)
 [![PyPI version](https://badge.fury.io/py/data_golf.svg)](https://badge.fury.io/py/data_golf)
 
@@ -306,7 +308,7 @@ Returns live strokes-gained and traditional stats for every player during PGA To
 
 ```python
 data = dg.live_predictions.live_tournament_stats()
-data = dg.live_predictions.live_tournament_stats(stats="sq_arg, sg_bs", disppaly="rank")
+data = dg.live_predictions.live_tournament_stats(stats="sq_arg, sg_bs", display="rank")
 ```
 
 
@@ -421,5 +423,3 @@ Returns Data Golf matchup / 3-ball odds for every pairing in the next round of
 data = dg.betting.matchup_odds_all_pairings(tour='pga')
 data = dg.betting.matchup_odds_all_pairings(tour='euro', odds_format='american')
 ```
-
-
